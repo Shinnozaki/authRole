@@ -89,7 +89,7 @@ const createProduct = async (req, res) => {
     });
     res.status(201).json({ msg: "product successfully created!" });
   } catch (error) {
-    res.status(500).json({ msg: error.mmessage });
+    res.status(500).json({ msg: error.message });
   }
 };
 

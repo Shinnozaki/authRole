@@ -10,10 +10,7 @@ const login = async (req, res) => {
   if (!user) {
     return res.status(400).json({ msg: "email doesn't exist" });
   }
-  console.log("qwe")
-  console.log(user.password)
   const match = await argon2.verify(user.password, req.body.password);
-  console.log(match)
   if (!match) {
     return res.status(400).json({ msg: "wrong password" });
   }
